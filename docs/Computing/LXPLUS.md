@@ -26,7 +26,7 @@ After installing, go to the extensions tab (left sidebar at the bottom) and find
 ## Setting up Passwordless Access
 
 #### Linux and MacOS
-We can edit the `ssh` config located in `/home/username/.ssh/config`. Insert the following into the file by replacing `username` with your CERN username and `vm` with the host that we are trying to connect to. This configuration allows us to set up a jump connection using the `lxtunnel` host if we are not on the CERN network, for example, if we are working remotely.
+We can edit the `ssh` config located in `/home/username/.ssh/config`. Insert the following into the file by replacing `username` with your CERN username and `vm` with the host that we are trying to connect to (for instance `lxplus`). This configuration allows us to set up a jump connection using the `lxtunnel` host if we are not on the CERN network, for example, if we are working remotely.
 
 ```
 Host vm
@@ -49,7 +49,7 @@ Now using the terminal we can get a Kerberos ticket by the command:
 kinit username@CERN.CH
 ```
 
-Then you should be able to connect via the terminal using VSCode without having to enter your password.
+Then you should be able to connect via the terminal or using VSCode without having to enter your password.
 
 #### Windows
 Since there is no official support from the Remote SSH extension to use WSL, by default it uses the Windows ssh client. There is however a hacky way of using WSL to make the `ssh` connection instead. We need to create a `.bat` file with the following content. 
