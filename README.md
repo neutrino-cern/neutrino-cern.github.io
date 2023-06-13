@@ -8,6 +8,8 @@ Clone this repository or use the GitHub online editor directly. To do this, you 
 Navigate to the `docs` directory. It consists of folders and markdown `.md` files. Each markdown file corresponds to a page on the website. A folder consisting of markdown files creates a dropdown menu
 with the folder name as the parent tab of the menu.
 
+The [ABPComputing docs](https://abpcomputing.web.cern.ch/) serves as an example of what our wiki should look like. 
+
 There is a great [guide](https://squidfunk.github.io/mkdocs-material/reference/) in the official `mkdocs-material` documentation on how to write Markdown files for this framework.
 
 ## Test locally 
