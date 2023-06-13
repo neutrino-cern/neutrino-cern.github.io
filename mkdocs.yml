@@ -5,3 +5,8 @@ theme:
     primary: dark-blue
     accent: light-blue
     scheme: light
+  features:
+    - edit.buttons
+
+repo_url: https://github.com/neutrino-cern/neutrino-cern.github.io
+edit_uri: edit/main/docs/
