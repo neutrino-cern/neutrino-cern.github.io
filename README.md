@@ -1,4 +1,4 @@
-# Neutrino Group Docs
+# [Neutrino Group Docs](https://neutrino-cern.github.io/)
 
 This is the documentation of the CERN Neutrino Group. It contains useful information for newcomers and also points them to other useful resources. 
 
