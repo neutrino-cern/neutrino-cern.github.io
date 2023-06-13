@@ -1,4 +1,4 @@
-# GPUs at CERN
+# GPUs
 
 ## LXPLUS 
 
