@@ -7,6 +7,10 @@ theme:
     scheme: light
   features:
     - edit.buttons
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 repo_url: https://github.com/neutrino-cern/neutrino-cern.github.io
 edit_uri: edit/main/docs/
