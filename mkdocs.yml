@@ -1,0 +1,7 @@
+site_name: Neutrino Group Documentation
+theme:
+  name: material
+  palette:
+    primary: dark-blue
+    accent: light-blue
+    scheme: light
