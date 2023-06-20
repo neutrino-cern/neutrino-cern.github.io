@@ -1,6 +1,4 @@
 # LXPLUS
-
-## Obtaining a CERN Computing Account
 ...
 
 ## Accessing LXPLUS

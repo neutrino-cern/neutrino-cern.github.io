@@ -27,6 +27,13 @@ The [CERN Kubeflow service](https://ml.docs.cern.ch/) is focused on deep learnin
 !!! warning
     There should be a page describing how to submit basic jobs to the cluster. 
 
+You can view nodes with GPUs by specifying a constraint to `condor_status, for example, to view all nodes with more than 2 GPUs:
+
+```
+condor_status -constraint 'GPUs > 2'
+```
+
+To increase your priority in the queue you can subscribe to the [`np-comp` group.](https://resources.web.cern.ch/resources/Manage/Linux/Subscribe.aspx)
 
 To require a GPU when submitting a job to the HTCondor LXBATCH cluster, we can specify in our `.sub` the following requirement:
 ```
