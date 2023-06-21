@@ -29,6 +29,18 @@ You can view nodes with GPUs by specifying a constraint to `condor_status`, for 
 condor_status -constraint 'GPUs > 2'
 ```
 
+We can also filter by GPU type, however, due to the current migration process, this command is different for A100 GPUs and the rest:
+
+- On A100
+```
+ condor_status -constraint 'regexp("V100", CUDADeviceName)'
+```
+
+- On everything else
+
+```
+ condor_status -constraint 'regexp("V100", GPUs_DeviceName)'
+```
 
 To increase your priority in the queue you can subscribe to the [`np-comp` group.](https://resources.web.cern.ch/resources/Manage/Linux/Subscribe.aspx)
 
@@ -36,6 +48,7 @@ To require a GPU when submitting a job to the HTCondor LXBATCH cluster, we can s
 ```
 request_GPUs = 1
 ```
+
 
 !!! info 
     Currently only machines with A100 GPUs will be assigned to your job by default. This is due to an ongoing upgrade of the nodes to AlmaLinux9, thus to run a job using V100 or T4 you must specify:
@@ -47,3 +60,5 @@ request_GPUs = 1
     ```
     requirements = ( TARGET.OpSysAndVer =?= "AlmaLinux9" || TARGET.OpSysAndVer =?= "CentOS7")
     ```
+
+
