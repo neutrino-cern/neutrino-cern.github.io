@@ -1,6 +1,3 @@
-# LXPLUS
-...
-
 ## Accessing LXPLUS
 
 ### Via the Terminal

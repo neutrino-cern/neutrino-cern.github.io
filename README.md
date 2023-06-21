@@ -1,6 +1,6 @@
 # [Neutrino Group Docs](https://neutrino-cern.github.io/)
 
-This is the documentation of the CERN Neutrino Group. It contains useful information for newcomers and also points them to other useful resources. 
+This is the documentation of the CERN Neutrino Group. It contains information for newcomers (and current members) and also points them to other useful resources.
 
 ## How to add new articles:
 Clone this repository or use the GitHub online editor directly. To do this, you must have the necessary permissions (i.e. you must be added as a collaborator in the repository- send a message in the Slack channel). 

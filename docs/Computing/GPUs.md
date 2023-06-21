@@ -23,15 +23,12 @@ The [CERN Kubeflow service](https://ml.docs.cern.ch/) is focused on deep learnin
 
 
 ## LXBATCH
-
-!!! warning
-    There should be a page describing how to submit basic jobs to the cluster. 
-
-You can view nodes with GPUs by specifying a constraint to `condor_status, for example, to view all nodes with more than 2 GPUs:
+You can view nodes with GPUs by specifying a constraint to `condor_status`, for example, to view all nodes with more than 2 GPUs:
 
 ```
 condor_status -constraint 'GPUs > 2'
 ```
+
 
 To increase your priority in the queue you can subscribe to the [`np-comp` group.](https://resources.web.cern.ch/resources/Manage/Linux/Subscribe.aspx)
 
@@ -39,3 +36,14 @@ To require a GPU when submitting a job to the HTCondor LXBATCH cluster, we can s
 ```
 request_GPUs = 1
 ```
+
+!!! info 
+    Currently only machines with A100 GPUs will be assigned to your job by default. This is due to an ongoing upgrade of the nodes to AlmaLinux9, thus to run a job using V100 or T4 you must specify:
+
+    ```
+    requirements = TARGET.OpSysAndVer =?= "AlmaLinux9"
+    ```
+    If the job can run on both versions then:
+    ```
+    requirements = ( TARGET.OpSysAndVer =?= "AlmaLinux9" || TARGET.OpSysAndVer =?= "CentOS7")
+    ```
