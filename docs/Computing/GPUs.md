@@ -33,11 +33,10 @@ We can also filter by GPU type, however, due to the current migration process, t
 
 - On A100
 ```
- condor_status -constraint 'regexp("V100", CUDADeviceName)'
+ condor_status -constraint 'regexp("A100", CUDADeviceName)'
 ```
 
 - On everything else
-
 ```
  condor_status -constraint 'regexp("V100", GPUs_DeviceName)'
 ```
