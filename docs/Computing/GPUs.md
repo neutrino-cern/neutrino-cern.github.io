@@ -10,6 +10,13 @@ ssh yourusername@lxplus-gpu.cern.ch
 The GPUs are usually an NVIDIA T4. 
 
 
+You also access A100 on nodes with AlmaLinux8:
+
+```
+ssh yourusername@lxplus8-gpu.cern.ch
+```
+
+
 ## SWAN
 
 You can also access GPUs on the [SWAN Service](https://swan-k8s.cern.ch/hub/spawn). You will have to create a ticket to be granted access, you will be pointed to the link for this when you try to create a session. 
