@@ -8,7 +8,7 @@ After selecting an appropriate view we can load by sourcing a `setup.sh` file fr
 source /cvmfs/sft.cern.ch/lcg/views/<release>/<platform>/setup.sh
 ```
 
-# Combining a Virtual Python Env with LGC Views
+## Combining a Virtual Python Env with LGC Views
 If we want to customize the software packages provided by the LCG view, we can create a virtual environment on top of the view, thus only installing extra packages, or upgrading existing ones, without having to build a complete environment from scratch. 
 
 we begin by sourcing the LCG view as above:
