@@ -1,7 +1,6 @@
 # Environments
 
-# Using LCG Views 
-
+## Using LCG Views 
 The [LCG Releases](https://ep-dep-sft.web.cern.ch/document/lcg-releases) provide an extensive collection of regularly updated software. The list of available software can be seen [here](https://lcginfo.cern.ch/). 
 
 After selecting an appropriate view we can load by sourcing a `setup.sh` file from `cvmfs` (this would be available on any `lxplus` machine):
@@ -29,11 +28,9 @@ Finally, if we need to upgrade a certain package we can use `pip`:
 pip install --upgrade tensorflow=newer.version
 ```
 
-# `conda`
-
+## Using `conda`
 !!! warning
     We highly recommend that you used a virtual environment on top of LCG. However it is possible to set up a complete environment from scratch using conda.
-
 
 To set up a conda environment we suggest that your first increase your AFS quota, by following [this](https://resources.web.cern.ch/resources/Help/?kbid=067040) guide.
 
