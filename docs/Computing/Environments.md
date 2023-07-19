@@ -30,7 +30,7 @@ pip install --upgrade tensorflow=newer.version
 
 ## Using `conda`
 !!! warning
-    We highly recommend that you used a virtual environment on top of LCG. However it is possible to set up a complete environment from scratch using conda.
+    We highly recommend that you use a virtual environment on top of LCG. However it is possible to set up a complete environment from scratch using conda.
 
 To set up a conda environment we suggest that your first increase your AFS quota, by following [this](https://resources.web.cern.ch/resources/Help/?kbid=067040) guide.
 
