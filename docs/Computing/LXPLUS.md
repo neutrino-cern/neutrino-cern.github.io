@@ -57,4 +57,66 @@ To point Remote-SSH extension to use that `.bat` file, we begin by opening the c
 
 To make this work seamlessly, we must make sure the contents of the ssh config files are the same in WSL and the default one in Windows. In Windows that file is usually located in `C:\Users\username\.ssh\config` and in WSL, it is usually located in `/home/username/.ssh/config`. After this, this configuration should let you connect to lxplus or any virtual machines behind the CERN firewall.
 
+### GitHub passwordless
 
+## Step 1: Check if SSH Key Exists
+First, while logged in lxplus, check if you already have an SSH key:
+```bash
+ls ~/.ssh/id_rsa.pub
+```
+If the key exists, you'll find it under `~/.ssh/id_rsa.pub`. If not, proceed to Step 2.
+
+## Step 2: Generate SSH Key (If Necessary)
+If no key exists, generate one using:
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+When prompted for the file location, press Enter to accept the default. Optionally, set a passphrase.
+
+## Step 3: Add SSH Key to the SSH Agent
+Start the SSH agent:
+```bash
+eval "$(ssh-agent -s)"
+```
+Add the private key:
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
+## Step 4: Add SSH Key to GitHub
+Copy the SSH public key:
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+Go to GitHub: `Settings → SSH and GPG keys`, click **New SSH Key**, paste the key, and click **Add SSH Key**.
+
+## Step 5: Test SSH Connection
+Run the following command to test:
+```bash
+ssh -T git@github.com
+```
+You should see: *"Hi username! You've successfully authenticated..."*.
+
+## Step 6: Configure Git to Use SSH
+Set your GitHub user info:
+```bash
+git config --global user.name "your_github_username"
+git config --global user.email "your_email@example.com"
+```
+
+Update remote URL to use SSH:
+```bash
+git remote set-url origin git@github.com:username/repository.git
+```
+Replace `username` with your GitHub username and `repository` with the repository name.
+
+## Alternative: Credential Caching (For HTTPS)
+If you prefer using HTTPS, you can cache credentials:
+```bash
+git config --global credential.helper 'cache --timeout=3600'
+```
+Alternatively, store credentials permanently (less secure):
+```bash
+git config --global credential.helper store
+```
